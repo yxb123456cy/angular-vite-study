@@ -1,12 +1,18 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
+  // templateUrl: './app.html',
+  templateUrl: "./app.html",
   styleUrl: './app.scss'
 })
 export class App {
+  inputText: string = ""
+  projectName: string = "angular-vite-study"
   protected readonly title = signal('angular-vite-study');
+
+  handleInputChange(e: Event) {
+    this.inputText = (e.target as HTMLInputElement).value;
+  }
 }
